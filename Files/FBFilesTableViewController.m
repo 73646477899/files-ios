@@ -14,16 +14,18 @@
 
 @implementation FBFilesTableViewController
 
-
+NSString *currentpath;
 
 - (id)initWithPath:(NSString *)path
 {
+    currentpath = [path copy];
 	self = [super initWithStyle:UITableViewStylePlain];
 	if (self) {
 		
 		self.path = path;
 		
-		self.title = [path lastPathComponent];
+		//self.title = [path lastPathComponent];
+        self.title = path;
 		
 		NSError *error = nil;
 		NSArray *tempFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error];
@@ -73,12 +75,15 @@
 		
 		UIBarButtonItem *itemCountBarItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%lu item%@", (unsigned long)self.files.count, ((self.files.count == 0) || (self.files.count > 1)) ? @"s" : @""] style:UIBarButtonItemStylePlain target:nil action:nil];
 		UIBarButtonItem *flexibleSpace =  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-		
+       
 		itemCountBarItem.tintColor = [UIColor blackColor];
 		[itemCountBarItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} forState:UIControlStateNormal];
 		
 		[self setToolbarItems:@[flexibleSpace,itemCountBarItem,flexibleSpace]];
 		
+        UIBarButtonItem *new = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(newFile)];
+        [self.navigationItem setLeftBarButtonItem:new];
+        
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(defaultsChanged:)
 													 name:NSUserDefaultsDidChangeNotification
@@ -88,7 +93,22 @@
 	}
 	return self;
 }
-
+- (void)newFile {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New file" message:@"Enter file name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        NSString *name = [[alertView textFieldAtIndex:0] text];
+        NSLog(@"creating new file: %@/%@", self.title, name);
+        NSString *go = [NSString stringWithFormat:@"%@/%@", self.title, name];
+        [@"" writeToFile:go atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        [self sortFiles];
+        [self.tableView reloadData];
+        
+    }
+}
 - (void)defaultsChanged:(NSNotification *)notification {
 	[self sortFiles];
 }

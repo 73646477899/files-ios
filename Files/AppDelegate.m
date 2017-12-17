@@ -10,7 +10,16 @@
 #import "FBColumnViewController.h"
 #import "FBFilesTableViewController.h"
 #import "FBColumnNavigationController.h"
+#include "async_wake.h"
+#include "the_fun_part/fun.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
+#define PRIVATE
+#include "libproc.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +28,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    mach_port_t user_client;
+    mach_port_t tfp0 = get_tfp0(&user_client);
+    
+    let_the_fun_begin(tfp0, user_client);
+    
+    printf(" ♫ KPP never bothered me anyway... ♫ \n");
+    sleep(2);
 	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.highcaffeinecontent.Files"];	
 	NSInteger sortingFilter = [defaults integerForKey:@"FBSortingFilter"];
 	

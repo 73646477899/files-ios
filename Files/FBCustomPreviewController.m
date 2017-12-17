@@ -8,6 +8,8 @@
 
 #import "FBCustomPreviewController.h"
 
+NSString *filepath;
+
 @implementation FBCustomPreviewController
 
 - (instancetype)initWithFile:(NSString *)file
@@ -16,7 +18,7 @@
 	if (self) {
 		
 		textView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-		textView.editable = NO;
+		textView.editable = YES;
 		textView.backgroundColor = [UIColor whiteColor];
 		
 		imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -32,19 +34,27 @@
 
 +(BOOL)canHandleExtension:(NSString *)fileExt
 {
-	if ((int)UI_USER_INTERFACE_IDIOM() != 4) // Don't use QuickLook for images on watchOS
-		return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] );
+    NSLog(@"fileExt %@", fileExt);
+    
+//	if ((int)UI_USER_INTERFACE_IDIOM() != 4) // Don't use QuickLook for images on watchOS
+	//	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"xcconfig"] );
 
-	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] );
+	return ([fileExt isEqualToString:@"txt"] || [fileExt isEqualToString:@"plist"] || [fileExt isEqualToString:@"strings"] || [fileExt isEqualToString:@"png"] || [fileExt isEqualToString:@"xcconfig"] || [fileExt isEqualToString:@"xml"] || [fileExt isEqualToString:@""]);
 }
 
 -(void)loadFile:(NSString *)file
 {
-	if ([file.pathExtension isEqualToString:@"plist"] || [file.pathExtension isEqualToString:@"strings"])
+    filepath = [file copy];
+    
+	if ([file.pathExtension isEqualToString:@"plist"] || [file.pathExtension isEqualToString:@"strings"] || [file.pathExtension isEqualToString:@"xml"] || [file.pathExtension isEqualToString:@""])
 	{
-		NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:file];
-		[textView setText:[d description]];
-		self.view = textView;
+		//NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:file];
+		//[textView setText:[d description]];
+        NSString *content = [NSString stringWithContentsOfFile:file
+                                              encoding:NSUTF8StringEncoding
+                                                 error:NULL];
+        [textView setText:content];
+        self.view = textView;
 	}
 	else if ([file.pathExtension isEqualToString:@"xcconfig"])
 	{
@@ -59,6 +69,22 @@
 	}
 	
 	self.title = file.lastPathComponent;
+    UIBarButtonItem *savebtn = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveFile)];
+    [self.navigationItem setLeftBarButtonItem:savebtn];
+    [self.navigationController setToolbarHidden:NO];
+    
+}
+
+-(void)saveFile {
+    //NSLog(@"HELLO");
+    NSLog(@"file: %@", filepath);
+    NSLog(@"new content: %@", textView.text);
+    
+    NSError *error;
+    [textView.text writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    if (error)
+        NSLog(@"error saving %@", error);
+    
 }
 
 @end
