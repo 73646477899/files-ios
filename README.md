@@ -25,3 +25,11 @@ TODO
 * Add option to remove files
 * Copy-pasting files
 * Prevent overwriting binaries
+
+CREDITS
+=============
+
+* Ian Beer (exploit)
+* theninjaprawn + Todesco + xerub (root rw)
+* steventroughtonsmith (file manager)
+* Jake James (small touches and made everything together)
