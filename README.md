@@ -7,8 +7,10 @@ Next-generation file browser for iOS.
  * System-wide Document Provider - open files in other apps
  * Go to Folder
  * Sorting options
- * RW ACCESS OVER THE FILESYSTEM YAY (iOS 11-11.1.2)
-
+ * RW ACCESS OVER THE FILESYSTEM YAY
+ * Option to edit exiting files (WARNING DO NOT CLICK SAVE WHEN OPENING BINARIES, THEY WILL GET ERASED (TODO)
+ * Option to create new files
+ * IPA -> https://github.com/jakeajames/files-ios/releases/
 Screenshots
 =============
 
