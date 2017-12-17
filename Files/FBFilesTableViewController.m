@@ -94,11 +94,47 @@ NSString *currentpath;
 	return self;
 }
 - (void)newFile {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New file" message:@"Enter file name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
+   /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New file" message:@"Enter file name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Create", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
+    [alert show];*/
+    //UIALERTCONTROLLERS SUCK, TAKES SO MUCH ROOM
+    
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:@"New file"
+                               message:@"Enter file name:"
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   UITextField *textField = alert.textFields[0];
+                                                   NSString *name = textField.text;
+                                                   NSLog(@"creating new file: %@/%@", self.title, name);
+                                                   NSString *go = [NSString stringWithFormat:@"%@/%@", self.title, name];
+                                                   [@"" writeToFile:go atomically:YES encoding:NSUTF8StringEncoding error:nil];
+                                                   [self sortFiles];
+                                                   [self.tableView reloadData];
+                                               }];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       
+                                                       NSLog(@"cancel btn");
+                                                       
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       
+                                                   }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"placeHolderText";
+        textField.keyboardType = UIKeyboardTypeDefault;
+    }];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+/*- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         NSString *name = [[alertView textFieldAtIndex:0] text];
         NSLog(@"creating new file: %@/%@", self.title, name);
@@ -108,7 +144,7 @@ NSString *currentpath;
         [self.tableView reloadData];
         
     }
-}
+}*/
 - (void)defaultsChanged:(NSNotification *)notification {
 	[self sortFiles];
 }
