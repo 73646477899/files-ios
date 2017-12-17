@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8247492A1FE5E79700C1B28D /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749221FE5E79600C1B28D /* kutils.c */; };
+		8247492B1FE5E79700C1B28D /* symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749231FE5E79600C1B28D /* symbols.c */; };
+		8247492C1FE5E79700C1B28D /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749241FE5E79600C1B28D /* kmem.c */; };
+		8247492D1FE5E79700C1B28D /* kcall.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749251FE5E79600C1B28D /* kcall.c */; };
+		8247492E1FE5E79700C1B28D /* async_wake.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749261FE5E79700C1B28D /* async_wake.c */; };
+		8247492F1FE5E79700C1B28D /* early_kalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749271FE5E79700C1B28D /* early_kalloc.c */; };
+		824749301FE5E79700C1B28D /* kdbg.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749281FE5E79700C1B28D /* kdbg.c */; };
+		824749311FE5E79700C1B28D /* find_port.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749291FE5E79700C1B28D /* find_port.c */; };
+		824749351FE6899700C1B28D /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 824749341FE6899700C1B28D /* IOKit.tbd */; };
+		824749381FE689C500C1B28D /* fun.m in Sources */ = {isa = PBXBuildFile; fileRef = 824749361FE689C500C1B28D /* fun.m */; };
+		824749391FE689C500C1B28D /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = 824749371FE689C500C1B28D /* patchfinder64.c */; };
 		B002AD581D0CC6A100A8616E /* DocumentPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B002AD571D0CC6A100A8616E /* DocumentPickerViewController.m */; };
 		B002AD5B1D0CC6A100A8616E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B002AD591D0CC6A100A8616E /* MainInterface.storyboard */; };
 		B002AD671D0CC6A200A8616E /* FileProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B002AD661D0CC6A200A8616E /* FileProvider.m */; };
@@ -62,6 +73,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8247490E1FE5E77B00C1B28D /* net */ = {isa = PBXFileReference; lastKnownFileType = folder; path = net; sourceTree = "<group>"; };
+		8247490F1FE5E77B00C1B28D /* async_wake.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = async_wake.h; sourceTree = "<group>"; };
+		824749101FE5E77B00C1B28D /* find_port.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = find_port.h; sourceTree = "<group>"; };
+		824749111FE5E77B00C1B28D /* symbols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = symbols.h; sourceTree = "<group>"; };
+		824749121FE5E77C00C1B28D /* symbols.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = symbols.c; sourceTree = "<group>"; };
+		824749131FE5E77C00C1B28D /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		824749141FE5E77C00C1B28D /* kcall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kcall.c; sourceTree = "<group>"; };
+		824749151FE5E77C00C1B28D /* async_wake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = async_wake.c; sourceTree = "<group>"; };
+		824749161FE5E77C00C1B28D /* early_kalloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = early_kalloc.h; sourceTree = "<group>"; };
+		824749171FE5E77C00C1B28D /* find_port.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = find_port.c; sourceTree = "<group>"; };
+		824749181FE5E77C00C1B28D /* kcall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kcall.h; sourceTree = "<group>"; };
+		824749191FE5E77C00C1B28D /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
+		8247491A1FE5E77D00C1B28D /* the_fun_part */ = {isa = PBXFileReference; lastKnownFileType = folder; path = the_fun_part; sourceTree = "<group>"; };
+		8247491B1FE5E77D00C1B28D /* kdbg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kdbg.h; sourceTree = "<group>"; };
+		8247491C1FE5E77D00C1B28D /* arm64_state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arm64_state.h; sourceTree = "<group>"; };
+		8247491D1FE5E77D00C1B28D /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
+		8247491E1FE5E77D00C1B28D /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
+		8247491F1FE5E77D00C1B28D /* kdbg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kdbg.c; sourceTree = "<group>"; };
+		824749201FE5E77D00C1B28D /* libproc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libproc.h; sourceTree = "<group>"; };
+		824749211FE5E77E00C1B28D /* early_kalloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = early_kalloc.c; sourceTree = "<group>"; };
+		824749221FE5E79600C1B28D /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = kutils.c; path = Files/kutils.c; sourceTree = "<group>"; };
+		824749231FE5E79600C1B28D /* symbols.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = symbols.c; path = Files/symbols.c; sourceTree = "<group>"; };
+		824749241FE5E79600C1B28D /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = kmem.c; path = Files/kmem.c; sourceTree = "<group>"; };
+		824749251FE5E79600C1B28D /* kcall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = kcall.c; path = Files/kcall.c; sourceTree = "<group>"; };
+		824749261FE5E79700C1B28D /* async_wake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = async_wake.c; path = Files/async_wake.c; sourceTree = "<group>"; };
+		824749271FE5E79700C1B28D /* early_kalloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = early_kalloc.c; path = Files/early_kalloc.c; sourceTree = "<group>"; };
+		824749281FE5E79700C1B28D /* kdbg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = kdbg.c; path = Files/kdbg.c; sourceTree = "<group>"; };
+		824749291FE5E79700C1B28D /* find_port.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = find_port.c; path = Files/find_port.c; sourceTree = "<group>"; };
+		824749321FE6891E00C1B28D /* sys */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sys; sourceTree = "<group>"; };
+		824749341FE6899700C1B28D /* IOKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = IOKit.tbd; path = ../../../IOKit.tbd; sourceTree = "<group>"; };
+		824749361FE689C500C1B28D /* fun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = fun.m; path = Files/the_fun_part/fun.m; sourceTree = "<group>"; };
+		824749371FE689C500C1B28D /* patchfinder64.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = patchfinder64.c; path = Files/the_fun_part/patchfinder64.c; sourceTree = "<group>"; };
 		B002AD521D0CC6A100A8616E /* FilesDocumentProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilesDocumentProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B002AD551D0CC6A100A8616E /* FilesDocumentProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FilesDocumentProvider.entitlements; sourceTree = "<group>"; };
 		B002AD561D0CC6A100A8616E /* DocumentPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentPickerViewController.h; sourceTree = "<group>"; };
@@ -111,12 +154,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824749351FE6899700C1B28D /* IOKit.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824749331FE6899700C1B28D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				824749341FE6899700C1B28D /* IOKit.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B002AD531D0CC6A100A8616E /* FilesDocumentProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +211,21 @@
 		B086051A1D0C587D00BA87E5 = {
 			isa = PBXGroup;
 			children = (
+				824749361FE689C500C1B28D /* fun.m */,
+				824749371FE689C500C1B28D /* patchfinder64.c */,
+				824749261FE5E79700C1B28D /* async_wake.c */,
+				824749271FE5E79700C1B28D /* early_kalloc.c */,
+				824749291FE5E79700C1B28D /* find_port.c */,
+				824749251FE5E79600C1B28D /* kcall.c */,
+				824749281FE5E79700C1B28D /* kdbg.c */,
+				824749241FE5E79600C1B28D /* kmem.c */,
+				824749221FE5E79600C1B28D /* kutils.c */,
+				824749231FE5E79600C1B28D /* symbols.c */,
 				B08605251D0C587D00BA87E5 /* Files */,
 				B002AD531D0CC6A100A8616E /* FilesDocumentProvider */,
 				B002AD621D0CC6A200A8616E /* FilesDocumentProviderFileProvider */,
 				B08605241D0C587D00BA87E5 /* Products */,
+				824749331FE6899700C1B28D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +242,27 @@
 		B08605251D0C587D00BA87E5 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				8247491C1FE5E77D00C1B28D /* arm64_state.h */,
+				824749151FE5E77C00C1B28D /* async_wake.c */,
+				8247490F1FE5E77B00C1B28D /* async_wake.h */,
+				824749211FE5E77E00C1B28D /* early_kalloc.c */,
+				824749161FE5E77C00C1B28D /* early_kalloc.h */,
+				824749171FE5E77C00C1B28D /* find_port.c */,
+				824749101FE5E77B00C1B28D /* find_port.h */,
+				824749141FE5E77C00C1B28D /* kcall.c */,
+				824749181FE5E77C00C1B28D /* kcall.h */,
+				8247491F1FE5E77D00C1B28D /* kdbg.c */,
+				8247491B1FE5E77D00C1B28D /* kdbg.h */,
+				8247491D1FE5E77D00C1B28D /* kmem.c */,
+				8247491E1FE5E77D00C1B28D /* kmem.h */,
+				824749191FE5E77C00C1B28D /* kutils.c */,
+				824749131FE5E77C00C1B28D /* kutils.h */,
+				824749201FE5E77D00C1B28D /* libproc.h */,
+				824749321FE6891E00C1B28D /* sys */,
+				8247490E1FE5E77B00C1B28D /* net */,
+				824749121FE5E77C00C1B28D /* symbols.c */,
+				824749111FE5E77B00C1B28D /* symbols.h */,
+				8247491A1FE5E77D00C1B28D /* the_fun_part */,
 				B08605291D0C587D00BA87E5 /* AppDelegate.h */,
 				B086052A1D0C587D00BA87E5 /* AppDelegate.m */,
 				B086053D1D0C58CA00BA87E5 /* FBColumnViewController.h */,
@@ -275,15 +359,15 @@
 				TargetAttributes = {
 					B002AD511D0CC6A100A8616E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2ZDN69KUUV;
+						DevelopmentTeam = 95CVJ7QH69;
 					};
 					B002AD601D0CC6A200A8616E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2ZDN69KUUV;
+						DevelopmentTeam = 95CVJ7QH69;
 					};
 					B08605221D0C587D00BA87E5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2ZDN69KUUV;
+						DevelopmentTeam = 95CVJ7QH69;
 					};
 				};
 			};
@@ -367,6 +451,16 @@
 				B002AD7D1D0CE7F600A8616E /* FBQLPreviewController.m in Sources */,
 				B08605481D0C6A4800BA87E5 /* FBColumnNavigationController.m in Sources */,
 				B086052B1D0C587D00BA87E5 /* AppDelegate.m in Sources */,
+				8247492A1FE5E79700C1B28D /* kutils.c in Sources */,
+				8247492B1FE5E79700C1B28D /* symbols.c in Sources */,
+				8247492C1FE5E79700C1B28D /* kmem.c in Sources */,
+				8247492D1FE5E79700C1B28D /* kcall.c in Sources */,
+				8247492E1FE5E79700C1B28D /* async_wake.c in Sources */,
+				8247492F1FE5E79700C1B28D /* early_kalloc.c in Sources */,
+				824749301FE5E79700C1B28D /* kdbg.c in Sources */,
+				824749381FE689C500C1B28D /* fun.m in Sources */,
+				824749391FE689C500C1B28D /* patchfinder64.c in Sources */,
+				824749311FE5E79700C1B28D /* find_port.c in Sources */,
 				B08605281D0C587D00BA87E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,10 +505,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilesDocumentProvider/FilesDocumentProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = FilesDocumentProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_CFLAGS = "-DAPP_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files.FilesDocumentProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file.w;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -425,10 +520,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilesDocumentProvider/FilesDocumentProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = FilesDocumentProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_CFLAGS = "-DAPP_EXTENSION";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files.FilesDocumentProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file.w;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -440,9 +536,10 @@
 				CODE_SIGN_ENTITLEMENTS = FilesDocumentProviderFileProvider/FilesDocumentProviderFileProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = FilesDocumentProviderFileProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files.FilesDocumentProviderFileProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file.ww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -455,9 +552,10 @@
 				CODE_SIGN_ENTITLEMENTS = FilesDocumentProviderFileProvider/FilesDocumentProviderFileProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = FilesDocumentProviderFileProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files.FilesDocumentProviderFileProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file.ww;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -495,7 +593,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_PEDANTIC = YES;
@@ -508,6 +606,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -536,7 +635,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_PEDANTIC = YES;
@@ -549,6 +648,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
@@ -557,9 +657,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = Files/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -569,9 +670,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 95CVJ7QH69;
 				INFOPLIST_FILE = Files/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.highcaffeinecontent.Files;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.iapps4u.file;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
