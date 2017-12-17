@@ -11,6 +11,7 @@ Next-generation file browser for iOS.
  * Option to edit exiting files (WARNING DO NOT CLICK SAVE WHEN OPENING BINARIES, THEY WILL GET ERASED (TODO)
  * Option to create new files
  * IPA -> https://github.com/jakeajames/files-ios/releases/
+ 
 Screenshots
 =============
 
@@ -23,3 +24,4 @@ TODO
 * Fix new files not showing up instantly
 * Add option to remove files
 * Copy-pasting files
+* Prevent overwriting binaries
